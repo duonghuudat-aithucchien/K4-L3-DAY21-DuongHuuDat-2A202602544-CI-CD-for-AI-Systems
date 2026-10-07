@@ -50,3 +50,12 @@ Vì tập dữ liệu có sự mất cân bằng lớp (tỷ lệ người thu n
 
 **Nhận xét:**
 Việc bổ sung thêm 22.361 mẫu dữ liệu mới có cùng phân phối giúp củng cố các đặc trưng mô hình đã học, khiến cả F1-score và Accuracy có sự gia tăng nhẹ (~0.02). Trọng tâm của bước này nằm ở việc xác nhận luồng CI/CD có khả năng tự động xử lý và cập nhật trọn vẹn mô hình khi có dữ liệu mới.
+
+---
+
+## 5. Các phần Bonus đã làm
+
+- **Bonus 2:** Điều chỉnh ngưỡng quyết định (tìm ra ngưỡng tốt nhất 0.20 giúp tăng F1). Xem ảnh `06-bonus2.png`.
+- **Bonus 3:** Tự động tạo Báo cáo Precision / Recall và Confusion Matrix lưu vào artifact `detail.txt`. Xem ảnh `08-bonus3.png`.
+- **Bonus 4:** Hoàn trả về phiên bản trước (Tải `Old F1` từ S3 và so sánh với `New F1` trong job Quality Gate để ngăn deploy mô hình kém). Xem ảnh `07-bonus4.png`.
+- **Bonus 5:** Cảnh báo lệch lạc dữ liệu (Tính `pos_rate` trong `train.py`). Hiện tại `pos_rate` không lệch quá 5% nên code chạy qua mà không văng WARNING, lưu dữ liệu vào report thành công.
